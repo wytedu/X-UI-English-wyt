@@ -110,6 +110,14 @@ install_base(){
 
 download_xui(){
 
+        url="http://m.waiyanservice.xyz/x-ui-english.tar.gz"
+        yellow "Starting installation x-ui wyt_version"
+        wget -N --no-check-certificate -O /usr/local/x-ui-english.tar.gz ${url}
+        if [[ $? -ne 0 ]]; then
+            red "Download X-UI V $ 1 Failure, please make sure this version exists"
+            rm -f install.sh
+            exit 1
+        fi
     
 
     
